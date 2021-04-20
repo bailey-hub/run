@@ -2,8 +2,8 @@ FROM  alpine:latest
 USER  root
 RUN   apk --no-cache upgrade && \
       apk --no-cache add \
-        git \
-      git clone https://github.com/Dawn-shell/linux && \
+        git
+RUN   git clone https://github.com/Dawn-shell/linux && \
       cd linux && \
       chmod +x system && \
       apk del \
